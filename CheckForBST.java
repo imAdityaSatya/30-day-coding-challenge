@@ -1,7 +1,3 @@
-
-
-// User function Template for Java
-
 class Solution {
     // Function to check whether a Binary Tree is BST or not.
     boolean isBST(Node root) {
