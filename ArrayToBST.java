@@ -1,7 +1,7 @@
 class Solution {
     
     Node fun(int[] nums, int low, int high) {
-        if(low > high){
+        if(low > high) {
             return null;
         }            
         int mid = (low+high)/2;
