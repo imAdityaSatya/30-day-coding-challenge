@@ -1,6 +1,5 @@
 class Solution{
-    static int countMin(String str)
-    {
+    static int countMin(String str) {
         // code here
         int n = str.length();
         String s="";
