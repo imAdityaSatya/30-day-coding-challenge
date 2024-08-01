@@ -1,1 +1,19 @@
-
+class Solution {
+    public String longestCommonPrefix(String arr[]) {
+        // code here
+        int n = arr.length;
+        if(arr == null || n==0){
+            return "-1";
+        }
+        String pref = arr[0];
+        for(int i=1; i<n; i++){
+            while(arr[i].indexOf(pref)!=0){
+                pref = pref.substring(0, pref.length()-1);
+                if(pref.isEmpty()){
+                    return "-1";
+                }
+            }
+        }
+        return pref;
+    }
+}
