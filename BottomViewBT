@@ -1,1 +1,47 @@
 
+
+//User function Template for Java
+
+
+class Solution
+{
+    //Function to return a list containing the bottom view of the given tree.
+    public ArrayList <Integer> bottomView(Node root)
+    {
+        // Code here
+        ArrayList<Integer> res = new ArrayList<>();
+        if(root == null) {
+            return res;
+        }
+        
+        Map<Integer, Integer> bottomViewMap = new TreeMap<>();   // Map to store the horizontal distance and the bottom-most node at that distance
+        
+        Queue<Node> nodeQueue = new LinkedList<>(); // Queue for level order traversal
+        Queue<Integer> distanceQueue = new LinkedList<>();
+        
+        nodeQueue.offer(root);  // Start with the root node and its horizontal distance 0
+        distanceQueue.offer(0);
+        
+        while(!nodeQueue.isEmpty()) {
+            Node node = nodeQueue.poll();
+            int hd = distanceQueue.poll();
+            
+            bottomViewMap.put(hd, node.data);   // Update the map with the latest node for the current horizontal distance
+            
+            if(node.left != null) {    // Enqueue left and right children with their respective horizontal distances
+                nodeQueue.offer(node.left);
+                distanceQueue.offer(hd-1);
+            }
+            if(node.right != null) {
+                nodeQueue.offer(node.right);
+                distanceQueue.offer(hd+1);
+            }
+        }
+        
+        for(Map.Entry<Integer, Integer> entry : bottomViewMap.entrySet()) {    // Extract the values in the sorted order of horizontal distances
+            res.add(entry.getValue());
+        }
+        
+        return res;
+    }
+}
