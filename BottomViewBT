@@ -36,7 +36,7 @@ class Solution
         for(Map.Entry<Integer, Integer> entry : bottomViewMap.entrySet()) {    // Extract the values in the sorted order of horizontal distances
             res.add(entry.getValue());
         }
-        
         return res;
     }
+
 }
