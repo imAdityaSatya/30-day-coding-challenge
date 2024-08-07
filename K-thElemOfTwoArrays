@@ -1,3 +1,7 @@
+
+
+// User function Template for Java
+
 class Solution {
     public long kthElement(int k, int arr1[], int arr2[]) {
         // code here
