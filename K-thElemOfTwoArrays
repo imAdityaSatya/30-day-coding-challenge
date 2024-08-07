@@ -1,7 +1,3 @@
-
-
-// User function Template for Java
-
 class Solution {
     public long kthElement(int k, int arr1[], int arr2[]) {
         // code here
@@ -10,10 +6,10 @@ class Solution {
         
         int arr3[] = new int[m+n];
         System.arraycopy(arr1, 0, arr3, 0, m);
-        System.arraycopy(arr2, 0, arr3, m, n);
-        
+        System.arraycopy(arr2, 0, arr3, m, n);        
         Arrays.sort(arr3);
+
         return arr3[k-1];
-        
     }
+
 }
