@@ -1,1 +1,33 @@
+/* A Binary Tree node
+class Node
+{
+    int data;
+    Node left, right;
+
+    Node(int item)
+    {
+        data = item;
+        left = right = null;
+    }
+}
+*/
+
+class Solution {
+    boolean isSumTree(Node root) {
+        // Your code here
+        // int sum = 0;
+        int val = root.data;
+        int sum = fun(root.left) + fun(root.right);
+        if(sum==0) {
+            return true;
+        }
+        return val == sum;
+    }
+    public int fun(Node root){
+        if(root == null) {
+            return 0;
+        }
+        return root.data + fun(root.left) + fun(root.right);
+    }
+}
 
