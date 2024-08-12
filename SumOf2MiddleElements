@@ -10,4 +10,5 @@ class Solution {
         int x = (m+n)/2;
         return ar[x-1]+ar[x];
     }
+
 }
