@@ -1,1 +1,15 @@
+// User function Template for Java
 
+class Solution {
+    public int SumofMiddleElements(int[] arr1, int[] arr2) {
+        // code here
+        int m = arr1.length;
+        int n = arr2.length;
+        int ar[] = new int[m+n];
+        System.arraycopy(arr1, 0, ar, 0, m);
+        System.arraycopy(arr2, 0, ar, m, n);
+        Arrays.sort(ar);
+        int x = (m+n)/2;
+        return ar[x-1]+ar[x];
+    }
+}
