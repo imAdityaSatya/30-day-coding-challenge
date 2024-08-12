@@ -1,5 +1,3 @@
-// User function Template for Java
-
 class Solution {
     public int SumofMiddleElements(int[] arr1, int[] arr2) {
         // code here
