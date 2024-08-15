@@ -1,0 +1,26 @@
+/*
+class Node{
+    int data;
+    Node next;
+
+    Node(int x){
+        data = x;
+        next = null;
+    }
+}
+*/
+
+class Solution {
+    public Node addOne(Node head) {
+        // code here.
+        if(head.next == null){  // Base case: if current node is the last node 
+            head.data+= 1;
+		    return head;
+	    }
+	    Node sum = addOne(head.next);   // Recursive case: Recur for the next node
+
+	    head.data+= (sum.data/10);  // Add the carry, if any, to the current node's data
+	    sum.data = sum.data%10;     // Update sum.data to be the unit digit of current node's value
+	    return head;    // Return the current node, which now contains the updated data
+    }
+}
