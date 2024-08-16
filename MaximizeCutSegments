@@ -1,0 +1,27 @@
+class Solution
+{
+    //Function to find the maximum number of cuts.
+    public int maximizeCuts(int n, int x, int y, int z)
+    {
+        //Your code here
+        ArrayList<Integer> cuts = new ArrayList<>();
+        cuts.add(x);
+        cuts.add(y);
+        cuts.add(z);
+        Collections.sort(cuts); // Sort the cuts to try the smallest first
+
+        int[] dp = new int[n+1];  // To store the maximum cuts for each length
+        
+        for(int i=1; i<=n; i++) {  // Trying to maximize the cuts
+            for(int cut : cuts) {
+                if(i>=cut && dp[i-cut]!=-1) {
+                    dp[i] = Math.max(dp[i], dp[i-cut] + 1);
+                }
+            }
+            if(dp[i] == 0) {
+                dp[i] = -1; // If no cuts can be made, mark it as invalid
+            }
+        }
+        return dp[n] == -1 ? 0 : dp[n]; // Return the maximum cuts possible for the original length
+    }
+}
