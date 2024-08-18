@@ -1,1 +1,39 @@
+class Solution 
+{ 
+	public static long[] productExceptSelf(int ar[], int n) 
+	{ 
+        // code here
+        long res[]= new long[n];
+        if(n==1){
+            res[0]=1;
+            return res;
+        }long tmp=1;
+        for(int i=0; i<n; i++){
+            res[i]=1;
+        }
+        for(int i=0; i<n; i++){
+            res[i]=tmp;
+            tmp*=ar[i];
+        }tmp=1;
+        for(int i=n-1; i>=0; i--){
+            res[i]*=tmp;
+            tmp*=ar[i];
+        }
+        return res;
+	} 
 
+  public static long[] productExceptSelf2(int nums[]) {
+        // code here
+        int n=nums.length;
+        long res[] = new long[n];
+        Arrays.fill(res, 1);
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(i!=j){
+                    res[i]*= nums[j];
+                }
+            }
+        }
+        return res;
+    }
+} 
