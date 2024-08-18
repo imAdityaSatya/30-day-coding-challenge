@@ -1,3 +1,4 @@
+/*
 class Solution 
 { 
 	public static long[] productExceptSelf(int ar[], int n) 
@@ -21,8 +22,12 @@ class Solution
         }
         return res;
 	} 
+} 
+*/
 
-  public static long[] productExceptSelf2(int nums[]) {
+
+class Solution {
+    public static long[] productExceptSelf(int nums[]) {
         // code here
         int n=nums.length;
         long res[] = new long[n];
@@ -36,4 +41,4 @@ class Solution
         }
         return res;
     }
-} 
+}
