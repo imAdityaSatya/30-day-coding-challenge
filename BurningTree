@@ -1,7 +1,3 @@
-
-
-//User function Template for Java
-
 class Solution
 {
     /*class Node {
@@ -49,7 +45,6 @@ class Solution
         else {
             return new int[]{-1, Math.max(left[1], right[1])+1};
         }
-        
     }
     
 }
