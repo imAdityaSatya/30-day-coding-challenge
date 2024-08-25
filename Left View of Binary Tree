@@ -1,1 +1,48 @@
+/* A Binary Tree node
+class Node
+{
+    int data;
+    Node left, right;
 
+    Node(int item)
+    {
+        data = item;
+        left = right = null;
+    }
+}*/
+class Tree
+{
+    //Function to return list containing elements of left view of binary tree.
+    ArrayList<Integer> leftView(Node root)
+    {
+        // Your code here
+        ArrayList<Integer> res = new ArrayList<>();
+        if(root == null) {
+            return res;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.offer(root); q.offer(null);
+        res.add(root.data);
+
+        while(!q.isEmpty()){
+            Node tmp = q.poll();
+            if(tmp == null){
+                if(q.isEmpty()){
+                    break;
+                }
+                q.offer(null);
+                res.add(q.peek().data);
+            }
+            else {
+                if(tmp.left != null){
+                    q.offer(tmp.left);
+                }
+                if(tmp.right != null){
+                    q.offer(tmp.right);
+                }
+            }
+        }
+        return res;
+    }
+
+}
